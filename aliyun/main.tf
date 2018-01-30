@@ -42,7 +42,7 @@ resource "alicloud_instance" "dev" {
   key_name = "caogj"
   internet_max_bandwidth_out = 10
   availability_zone = "ap-northeast-1a"
-  image_id = "ubuntu_16_0402_64_20G_alibase_20171227.vhd"
+  image_id = "ubuntu_14_0405_64_20G_alibase_20170824.vhd"
   instance_type = "ecs.n4.small"
   system_disk_category = "cloud_efficiency"
   security_groups = ["${alicloud_security_group.sg.id}"] 
