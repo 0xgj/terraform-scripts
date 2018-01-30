@@ -1,7 +1,7 @@
 provider "alicloud" {
   access_key = "${var.access_key}"
   secret_key = "${var.secret_key}"
-  region     = "ap-northeast"
+  region     = "ap-northeast-1"
 }
 
 # 创建VPC
