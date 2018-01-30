@@ -39,6 +39,7 @@ resource "alicloud_security_group_rule" "allow_http" {
 resource "alicloud_instance" "dev" {
   count = "1"
   instance_name = "terraform-ecs"
+  key_name = "caogj"
   internet_max_bandwidth_out = 10
   availability_zone = "ap-northeast-1a"
   image_id = "ubuntu_16_0402_64_20G_alibase_20171227.vhd"
