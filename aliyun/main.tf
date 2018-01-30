@@ -36,17 +36,14 @@ resource "alicloud_security_group_rule" "allow_http" {
 }
 
 # 创建ECS服务器
-resource "alicloud_instance" "web" {
+resource "alicloud_instance" "dev" {
   count = "1"
   instance_name = "terraform-ecs"
-  allocate_public_ip = "true"
   internet_max_bandwidth_out = 10
   availability_zone = "ap-northeast-1a"
   image_id = "ubuntu_16_0402_64_20G_alibase_20171227.vhd"
   instance_type = "ecs.n4.small"
-  io_optimized = "optimized"
   system_disk_category = "cloud_efficiency"
   security_groups = ["${alicloud_security_group.sg.id}"] 
   vswitch_id = "${alicloud_vswitch.vsw.id}"
-  user_data = "#include\nhttps://raw.githubusercontent.com/mosuke5/terraform_for_alibabacloud_examples/master/basic_sample/provisioning.sh"
 }
